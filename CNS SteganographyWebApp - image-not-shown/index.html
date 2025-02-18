@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Steganography Web App</title>
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white flex justify-center items-center min-h-screen">
+    <div class="w-full max-w-2xl p-6 bg-gray-800 rounded-lg shadow-lg text-center">
+        <h1 class="text-3xl font-bold mb-4 text-green-400">Secure Steganography Web App</h1>
+        
+        <input type="file" id="imageInput" accept="image/*" class="block w-full p-2 bg-gray-700 rounded-lg mb-4">
+        
+        <textarea id="message" placeholder="Enter your secret message..." class="w-full p-3 bg-gray-700 rounded-lg mb-4"></textarea>
+        
+        <input type="password" id="key" placeholder="Enter secret key..." class="w-full p-3 bg-gray-700 rounded-lg mb-4">
+
+        <button onclick="hideMessage()" class="w-full bg-green-500 p-3 rounded-lg hover:bg-green-600 mt-2 font-semibold">🔒 Hide Message</button>
+        <button onclick="extractMessage()" class="w-full bg-blue-500 p-3 rounded-lg hover:bg-blue-600 mt-2 font-semibold">🔓 Extract Message</button>
+        
+        <canvas id="canvas" class="hidden"></canvas>
+        <p id="output" class="mt-4 text-lg text-yellow-300 font-semibold"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
